@@ -1,121 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falcon 5 Lower Thirds</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            margin: 40px;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+        <title>Falcon 5 Lower Thirds</title>
+    </head>
+    <body>
+        <h2>Falcon Five Lower Thirds</h2>
 
-        h2 {
-            color: #333;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        input {
-            padding: 10px;
-            width: 250px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button {
-            padding: 10px 15px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        canvas {
-            border: 2px solid #333;
-            margin-top: 20px;
-            background-color: white;
-        }
-    </style>
-</head>
-<body>
-    <h2>Falcon Five Lower Thirds</h2>
-
-    <div class="container">
-        <input type="text" id="nameInput" placeholder="Enter Name">
-        <input type="text" id="titleInput" placeholder="Enter Title">
-        <button onclick="generateLowerThird()">Generate</button>
-        <button onclick="downloadImage()">Download</button>
-        <canvas id="lowerThirdCanvas" width="480" height="270"></canvas>
-    </div>
-
-    <script>
-        const canvas = document.getElementById("lowerThirdCanvas");
-        const ctx = canvas.getContext("2d");
-        const img = new Image();
-        img.src = "lower thirds for segments(5).png"; // Image source
-
-        img.onload = () => drawLowerThird();
-
-        function drawLowerThird() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-            const name = document.getElementById("nameInput").value.trim();
-            const title = document.getElementById("titleInput").value.trim();
-
-            ctx.font = "10px Roboto Serif";
-            ctx.fillStyle = "black";
-            ctx.fillText(name, 120, 245);
-
-            ctx.font = "7px Roboto Serif";
-            ctx.fillStyle = "white";
-            ctx.fillText(title, 120, 255);
-        }
-
-        function generateLowerThird() {
-            drawLowerThird();
-        }
-
-        function downloadImage() {
-            const fullResCanvas = document.createElement("canvas");
-            fullResCanvas.width = 1920;
-            fullResCanvas.height = 1080;
-            const fullResCtx = fullResCanvas.getContext("2d");
-
-            fullResCtx.drawImage(img, 0, 0, fullResCanvas.width, fullResCanvas.height);
-
-            const name = document.getElementById("nameInput").value.trim();
-            const title = document.getElementById("titleInput").value.trim();
-
-            fullResCtx.font = "40px Roboto Serif";
-            fullResCtx.fillStyle = "black";
-            fullResCtx.fillText(name, 480, 980);
-
-            fullResCtx.font = "28px Roboto Serif";
-            fullResCtx.fillStyle = "white";
-            fullResCtx.fillText(title, 480, 1020);
-
-            const link = document.createElement('a');
-            link.download = 'lower_third.png';
-            link.href = fullResCanvas.toDataURL('image/png');
-            link.click();
-        }
-    </script>
-</body>
+        <div class="container">
+            <input type="text" id="nameInput" placeholder="Enter Name">
+            <input type="text" id="titleInput" placeholder="Enter Title">
+            <button onclick="generateLowerThird()">Generate</button>
+            <button onclick="downloadImage()">Download</button>
+            <canvas id="lowerThirdCanvas" width="480" height="270"></canvas>
+        </div>
+    </body>
+    <script src="/script.js"></script>
 </html>
