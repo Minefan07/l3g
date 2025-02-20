@@ -14,11 +14,11 @@ function drawLowerThird() {
 
     ctx.font = "10px Roboto Serif";
     ctx.fillStyle = "black";
-    ctx.fillText(name, 120, 245);
+    ctx.fillText(name, 75, 245);
 
     ctx.font = "7px Roboto Serif";
     ctx.fillStyle = "white";
-    ctx.fillText(title, 120, 255);
+    ctx.fillText(title, 75, 255);
 }
 
 function generateLowerThird() {
@@ -38,11 +38,11 @@ function downloadImage() {
 
     fullResCtx.font = "40px Roboto Serif";
     fullResCtx.fillStyle = "black";
-    fullResCtx.fillText(name, 480, 980);
+    fullResCtx.fillText(name, 300, 980);
 
     fullResCtx.font = "28px Roboto Serif";
     fullResCtx.fillStyle = "white";
-    fullResCtx.fillText(title, 480, 1020);
+    fullResCtx.fillText(title, 300, 1020);
 
     const link = document.createElement('a');
     link.download = 'lower.png';
