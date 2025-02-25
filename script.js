@@ -1,7 +1,7 @@
 const canvas = document.getElementById("lowerThirdCanvas");
 const ctx = canvas.getContext("2d");
 const img = new Image();
-img.src = "/lower.png"; // Image source
+img.src = "./lower.png"; // Image source
 
 img.onload = () => drawLowerThird();
 
